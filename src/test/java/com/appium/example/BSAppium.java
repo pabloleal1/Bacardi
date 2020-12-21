@@ -50,26 +50,22 @@ public class BSAppium {
         caps.setCapability("build", "Java Android");
         caps.setCapability("name", "first_test");
 
-        File app = new File(loadproperty.loadProperties().getProperty("apkDir"), loadproperty.loadProperties().getProperty("apkName"));
-
-        caps.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
         try {
             driver = new AndroidDriver(new URL("http://hub.browserstack.com/wd/hub"), caps);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        //driver = new AndroidDriver(service.getUrl(), caps);
 
         // Invoke driver.quit() after the test is done to indicate that the test is completed.
-        driver.quit();
+        //driver.quit();
 
 
     }
 
 
 
-    public AndroidDriver<WebElement> getDriver() {
+    public static AndroidDriver<WebElement> getDriver() {
         return driver;
     }
 
@@ -114,6 +110,7 @@ public class BSAppium {
         }
     }
 
+    @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();

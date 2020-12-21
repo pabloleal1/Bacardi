@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.appium.stepdefinitions.RunCukeTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.375 s - in com.appium.stepdefinitions.RunCukeTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 98.005 s - in com.appium.stepdefinitions.RunCukeTest

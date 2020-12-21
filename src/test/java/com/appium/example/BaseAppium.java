@@ -2,17 +2,19 @@ package com.appium.example;
 
 import com.utils.PropertyLoader;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.junit.After;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
+
 import java.io.File;
 import java.util.Map;
 
-public class BaseAppium {
+public class BaseAppium{
 
 
     //private Logger logger = Logger.getLogger(BaseAppium.class.getName());
@@ -20,6 +22,7 @@ public class BaseAppium {
     public static AndroidDriver<WebElement> driver;
     private DesiredCapabilities configCapabilities = new DesiredCapabilities();
     public String type;
+
 
 
     public void init() {
@@ -44,6 +47,7 @@ public class BaseAppium {
         clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         //clientCapabilities.setCapability(MobileCapabilityType. "Android Device");
 
+
         File app = new File(loadproperty.loadProperties().getProperty("apkDir"), loadproperty.loadProperties().getProperty("apkName"));
 
         desiredCapabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
@@ -57,13 +61,15 @@ public class BaseAppium {
         service = builder.build();
         service.start();
         driver = new AndroidDriver(service.getUrl(), clientCapabilities);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
     }
 
 
-    public AndroidDriver<WebElement> getDriver() {
+    public static AndroidDriver<WebElement> getDriver() {
         return driver;
     }
+
 
     @After
     public void removeApp() throws Exception {

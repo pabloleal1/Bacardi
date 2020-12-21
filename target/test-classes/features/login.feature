@@ -1,11 +1,7 @@
-Feature: Make login in the mobile application
-As a user
-I want to make login in the mobile application
+Feature: illegal age
 
-Background:
-    Given we enter to application
-
-Scenario: Do login in the application
+Scenario: creation account with illegal age
+    Given verify Freepour APP is pre-installed using <user> role
     When we make login with user and password
-    Then the login is successfull
+
 

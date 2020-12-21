@@ -3,35 +3,14 @@
     "line": 1,
     "elements": [
       {
-        "line": 5,
-        "name": "",
+        "line": 3,
+        "name": "creation account with illegal age",
         "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3076895500,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "we enter to application",
-            "match": {
-              "location": "LoginSteps.we_enter_to_application()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "line": 8,
-        "name": "Do login in the application",
-        "description": "",
-        "id": "make-login-in-the-mobile-application;do-login-in-the-application",
+        "id": "illegal-age;creation-account-with-illegal-age",
         "after": [
           {
             "result": {
-              "duration": 1505600,
+              "duration": 1323500,
               "status": "passed"
             },
             "match": {
@@ -44,35 +23,34 @@
         "steps": [
           {
             "result": {
-              "error_message": "java.lang.NullPointerException\r\n\tat java.util.Objects.requireNonNull(Objects.java:203)\r\n\tat org.openqa.selenium.support.ui.FluentWait.\u003cinit\u003e(FluentWait.java:106)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:85)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:45)\r\n\tat com.appium.stepdefinitions.Login.login(Login.java:21)\r\n\tat com.appium.stepdefinitions.LoginSteps.we_make_login_with_user_and_password(LoginSteps.java:32)\r\n\tat ✽.we make login with user and password(src/test/resources/features/login.feature:9)\r\n",
-              "duration": 5525300,
-              "status": "failed"
+              "duration": 32071996500,
+              "status": "passed"
             },
-            "line": 9,
+            "line": 4,
+            "name": "verify Freepour APP is pre-installed using \u003cuser\u003e role",
+            "match": {
+              "location": "LoginSteps.we_enter_to_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13054464700,
+              "status": "passed"
+            },
+            "line": 5,
             "name": "we make login with user and password",
             "match": {
               "location": "LoginSteps.we_make_login_with_user_and_password()"
             },
             "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 223500,
-              "status": "skipped"
-            },
-            "line": 10,
-            "name": "the login is successfull",
-            "match": {
-              "location": "LoginSteps.the_login_is_successfull()"
-            },
-            "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Make login in the mobile application",
-    "description": "As a user\nI want to make login in the mobile application",
-    "id": "make-login-in-the-mobile-application",
+    "name": "illegal age",
+    "description": "",
+    "id": "illegal-age",
     "keyword": "Feature",
     "uri": "src/test/resources/features/login.feature",
     "tags": []

@@ -1,44 +1,42 @@
 package com.appium.stepdefinitions;
 
-import bean.User;
+import com.appium.Utilities;
 import com.appium.example.BSAppium;
 import com.appium.example.BaseAppium;
+import com.appium.example.Screen;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
 
 public class Login extends BSAppium {
 
 
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[3]/XCUIElementTypeButton[1])[1]")
-    @AndroidFindBy(xpath = "(//android.widget.TextView[contains(@text,'TODOS')])")
-    public MobileElement totalMailText;
-
-    public void login(User user) {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.example.mkim.aut:id/email_sign_in_button")));
-
-        MobileElement userElement = (MobileElement) driver.findElementById("com.example.mkim.aut:id/email");
-        userElement.sendKeys(user.getUser());
-        MobileElement passwordElement = (MobileElement) driver.findElementById("com.example.mkim.aut:id/password");
-        passwordElement.sendKeys(user.getPassword());
-        MobileElement buttonLogin = (MobileElement) driver.findElementById("com.example.mkim.aut:id/email_sign_in_button");
-        buttonLogin.click();
+    Screen screen = new Screen();
+    public Login() {
+        PageFactory.initElements(new AppiumFieldDecorator(BSAppium.getDriver()), this);
     }
 
-    public boolean isUserLogged() {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.example.mkim.aut:id/Logout")));
+    @iOSXCUITFindBy(xpath = "(//")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[1]/android.widget.EditText")
+    public MobileElement verificationCodeField;
 
-        MobileElement buttonLogout = (MobileElement) driver.findElementById("com.example.mkim.aut:id/Logout");
-        return buttonLogout.isDisplayed();
-    }
+    @iOSXCUITFindBy(xpath = "(//")
+    @AndroidFindBy(xpath = "//*[contains(@text, 'USA')]")
+    public MobileElement country_DropDownMenu;
 
-    public void logout() {
-        MobileElement buttonLogout = (MobileElement) driver.findElementById("com.example.mkim.aut:id/Logout");
-        buttonLogout.click();
+
+
+    public void login() {
+
+        Utilities.sleep(5000);
+        verificationCodeField.click();
+        Utilities.sleep(5000);
+        screen.sendKeys(verificationCodeField,"DemoTest");
+        //country_DropDownMenu.click();
+
     }
 }

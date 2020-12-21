@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2265515400,
+              "duration": 3076895500,
               "status": "passed"
             },
             "line": 6,
@@ -31,7 +31,7 @@
         "after": [
           {
             "result": {
-              "duration": 953800,
+              "duration": 1505600,
               "status": "passed"
             },
             "match": {
@@ -45,7 +45,7 @@
           {
             "result": {
               "error_message": "java.lang.NullPointerException\r\n\tat java.util.Objects.requireNonNull(Objects.java:203)\r\n\tat org.openqa.selenium.support.ui.FluentWait.\u003cinit\u003e(FluentWait.java:106)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:85)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:45)\r\n\tat com.appium.stepdefinitions.Login.login(Login.java:21)\r\n\tat com.appium.stepdefinitions.LoginSteps.we_make_login_with_user_and_password(LoginSteps.java:32)\r\n\tat ✽.we make login with user and password(src/test/resources/features/login.feature:9)\r\n",
-              "duration": 3560300,
+              "duration": 5525300,
               "status": "failed"
             },
             "line": 9,
@@ -57,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 142600,
+              "duration": 223500,
               "status": "skipped"
             },
             "line": 10,

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Make login in the mobile application" skipped="0" tests="1" time="2.49" timestamp="2020-12-21 12:09:54"><testcase name="Do login in the application"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Make login in the mobile application" skipped="0" tests="1" time="3.34" timestamp="2020-12-21 12:36:14"><testcase name="Do login in the application"><error type="java.lang.NullPointerException"/><system-err>null&#13;
 com.appium.stepdefinitions.Login.login(Login.java:21)&#13;
 com.appium.stepdefinitions.LoginSteps.we_make_login_with_user_and_password(LoginSteps.java:32)&#13;
 ✽.we make login with user and password(src/test/resources/features/login.feature:9)&#13;

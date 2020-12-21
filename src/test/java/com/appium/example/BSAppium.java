@@ -55,7 +55,7 @@ public class BSAppium {
         caps.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
         try {
-            driver = new AndroidDriver<>(new URL("http://hub.browserstack.com/wd/hub"), caps);
+            driver = new AndroidDriver(new URL("http://hub.browserstack.com/wd/hub"), caps);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

@@ -5,6 +5,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.junit.After;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
@@ -63,7 +65,7 @@ public class BaseAppium {
         return driver;
     }
 
-
+    @After
     public void removeApp() throws Exception {
 
 
@@ -72,13 +74,8 @@ public class BaseAppium {
             return;
         }
 
-
-        //Stop screen recordig
-        //stopScreenRecordig();
-
         Map<String, ?> cap = driver.getCapabilities().asMap();
-        //type = loadproperty.loadProperties().getProperty("platformName");
-        //System.out.println("KOKOKOKO"+type);
+
         switch (type) {
             case "Android":
                 bundleID = (String) cap.get("appPackage");
@@ -91,6 +88,10 @@ public class BaseAppium {
             driver.removeApp(bundleID);
             System.out.println("[Driver] Remove APP Appium");
         }
+
+            Runtime.getRuntime().exec("adb kill-server");
+            Runtime.getRuntime().exec("taskkill /F /IM adb.exe");
+
     }
 
 

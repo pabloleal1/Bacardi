@@ -32,7 +32,7 @@ formatter.match({
   "location": "LoginSteps.we_make_login_with_user_and_password()"
 });
 formatter.result({
-  "error_message": "java.lang.NullPointerException\r\n\tat java.util.Objects.requireNonNull(Objects.java:203)\r\n\tat org.openqa.selenium.support.ui.FluentWait.\u003cinit\u003e(FluentWait.java:106)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:85)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:45)\r\n\tat com.appium.stepdefinitions.Login.login(Login.java:13)\r\n\tat com.appium.stepdefinitions.LoginSteps.we_make_login_with_user_and_password(LoginSteps.java:31)\r\n\tat ✽.we make login with user and password(src/test/resources/features/login.feature:9)\r\n",
+  "error_message": "java.lang.NullPointerException\r\n\tat java.util.Objects.requireNonNull(Objects.java:203)\r\n\tat org.openqa.selenium.support.ui.FluentWait.\u003cinit\u003e(FluentWait.java:106)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:85)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.\u003cinit\u003e(WebDriverWait.java:45)\r\n\tat com.appium.stepdefinitions.Login.login(Login.java:21)\r\n\tat com.appium.stepdefinitions.LoginSteps.we_make_login_with_user_and_password(LoginSteps.java:32)\r\n\tat ✽.we make login with user and password(src/test/resources/features/login.feature:9)\r\n",
   "status": "failed"
 });
 formatter.step({

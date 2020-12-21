@@ -1,6 +1,7 @@
 package com.appium.stepdefinitions;
 
 import bean.User;
+import com.appium.example.BSAppium;
 import com.appium.example.BaseAppium;
 import com.utils.PropertyLoader;
 import cucumber.api.java.After;
@@ -17,7 +18,7 @@ public class LoginSteps {
 
     @Given("^we enter to application$")
     public void we_enter_to_application() {
-        BaseAppium baseAppium = new BaseAppium();
+        BSAppium baseAppium = new BSAppium();
         try {
             baseAppium.init();
         } catch (Exception e) {
